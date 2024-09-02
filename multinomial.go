@@ -5,7 +5,7 @@ import (
 	"time"
 )
 
-func (g BinomialGenerator) Multinomial(n int, probs []float64, retSize int) []int {
+func (g *BinomialGenerator) Multinomial(n int, probs []float64, retSize int) []int {
 	d := len(probs)
 	if Kahan(probs) > (1.0 + 1e-12) {
 		panic("Probabilities add up to greater than 1!")
